@@ -8,9 +8,9 @@ export class createTableCustomers1607880997792 implements MigrationInterface {
         {
           name: 'id',
           type: 'varchar',
-          default: 'uuid_generate_v4()',
           isPrimary: true,
           generationStrategy: 'uuid',
+          default: 'uuid_generate_v4()',
         },
         {
           name: 'name',
