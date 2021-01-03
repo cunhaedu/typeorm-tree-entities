@@ -5,7 +5,6 @@ import {
   UpdateDateColumn,
   PrimaryGeneratedColumn,
   OneToMany,
-  JoinColumn,
   TreeParent,
   TreeChildren,
   Tree,
@@ -23,12 +22,9 @@ export default class Department {
   @Column()
   name: string;
 
-  // @ManyToOne(() => Department, (department) => department.children)
   @TreeParent()
-  @JoinColumn({ name: 'parent_id' })
   parent: Department;
 
-  // @OneToMany(() => Department, (department) => department.parent)
   @TreeChildren()
   children: Department[];
 
@@ -38,6 +34,6 @@ export default class Department {
   @UpdateDateColumn({ type: 'timestamp' })
   updated_at: Date;
 
-  @OneToMany(() => Customer, (department) => department.department)
+  @OneToMany(() => Customer, (customer) => customer.department)
   customers: Customer[];
 }

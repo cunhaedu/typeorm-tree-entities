@@ -1,4 +1,4 @@
-import { getRepository } from 'typeorm';
+import { getManager, getRepository } from 'typeorm';
 import Department from '../../entities/Department';
 import { IDepartmentRepository } from '../IDepartmentRepository';
 
@@ -24,11 +24,13 @@ export class DepartmentsRepository implements IDepartmentRepository {
   }
 
   async find(relations?: string[]): Promise<Department[]> {
-    const departmentsRepository = getRepository(Department);
+    const manager = getManager();
 
-    const departments = await departmentsRepository.find({
-      relations,
-    });
+    const departments = await manager.getTreeRepository(Department).findTrees();
+
+    // const departments = await getRepository(Department).find({
+    //   relations,
+    // });
 
     return departments;
   }
