@@ -21,7 +21,7 @@ export default class Customer {
   @Column()
   email: string;
 
-  @ManyToOne(() => Department, (department) => department.customers)
+  @ManyToOne(() => Department)
   @JoinColumn({ name: 'department_id' })
   department: Department;
 

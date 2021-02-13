@@ -4,13 +4,10 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   PrimaryGeneratedColumn,
-  OneToMany,
   TreeParent,
   TreeChildren,
   Tree,
-  // ManyToOne,
 } from 'typeorm';
-import Customer from './Customer';
 
 @Entity('departments')
 @Tree('closure-table')
@@ -33,7 +30,4 @@ export default class Department {
 
   @UpdateDateColumn({ type: 'timestamp' })
   updated_at: Date;
-
-  @OneToMany(() => Customer, (customer) => customer.department)
-  customers: Customer[];
 }
