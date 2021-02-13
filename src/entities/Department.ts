@@ -4,17 +4,13 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   PrimaryGeneratedColumn,
-  OneToMany,
-  JoinColumn,
-  // TreeParent,
-  // TreeChildren,
-  // Tree,
-  ManyToOne,
+  TreeParent,
+  TreeChildren,
+  Tree,
 } from 'typeorm';
-import Customer from './Customer';
 
 @Entity('departments')
-// @Tree('closure-table')
+@Tree('closure-table')
 export default class Department {
   @Column('uuid')
   @PrimaryGeneratedColumn('uuid')
@@ -23,13 +19,10 @@ export default class Department {
   @Column()
   name: string;
 
-  @ManyToOne(() => Department, (department) => department.children)
-  // @TreeParent()
-  @JoinColumn({ name: 'parent_id' })
+  @TreeParent()
   parent: Department;
 
-  @OneToMany(() => Department, (department) => department.parent)
-  // @TreeChildren()
+  @TreeChildren()
   children: Department[];
 
   @CreateDateColumn({ type: 'timestamp' })
@@ -37,7 +30,4 @@ export default class Department {
 
   @UpdateDateColumn({ type: 'timestamp' })
   updated_at: Date;
-
-  @OneToMany(() => Customer, (department) => department.department)
-  customers: Customer[];
 }

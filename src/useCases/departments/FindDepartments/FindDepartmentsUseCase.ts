@@ -7,7 +7,7 @@ export class FindDepartmentsUseCase {
   ) {}
 
   async execute(): Promise<Department[]> {
-    const departments = await this.DepartmentRepository.find(['parent']);
+    const departments = await this.DepartmentRepository.find();
 
     return departments;
   }

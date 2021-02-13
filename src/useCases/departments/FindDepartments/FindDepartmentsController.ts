@@ -9,6 +9,6 @@ export class FindDepartmentController {
   async handle(request: Request, response: Response): Promise<Response> {
     const departments = await this.findDepartmentsUseCase.execute();
 
-    return response.status(201).json(departments);
+    return response.json(departments);
   }
 }

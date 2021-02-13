@@ -2,7 +2,9 @@ import * as Yup from 'yup';
 
 const createDepartmentValidator = Yup.object().shape({
   name: Yup.string().required(),
-  department_id: Yup.string(),
+  parent: Yup.object({
+    id: Yup.string(),
+  }).optional(),
 });
 
 export { createDepartmentValidator };
