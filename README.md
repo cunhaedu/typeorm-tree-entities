@@ -4,7 +4,7 @@
 
 # TypeORM Tree Entities
 
-Learn how to work with tree entities in TypeORM
+Learning how to work with tree entities in TypeORM
 
 # :pushpin: Table of Contents
 
@@ -19,7 +19,6 @@ Learn how to work with tree entities in TypeORM
 # :rocket: Features
 
 * Departments CRUD
-* Customers CRUD
 
 # :clipboard: Database Model
 
@@ -59,10 +58,6 @@ cp .env.example .env
 
 Install [Postgres](https://www.postgresql.org/) to create a database and create a database, then you should modify the ```.env``` and ```ormconfig.json``` with your credentials
 
-**Setup e-mail service**
-
-Create an account in [mailTrap](https://mailtrap.io/) and insert your access credential inside .env file
-
 # :runner: Getting Started
 
 Run the transactions in order to configure the database schema:
@@ -97,14 +92,16 @@ Check the following status codes in this API:
 | 404 | `NOT FOUND` |
 | 500 | `INTERNAL SERVER ERROR` |
 
-# :rocket: Application routes
-
-You can check every routes of this application in the [Request](./requests) folder
-
-If you're using the VS Code, you are able to use a plugin named [Rest cliente](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) that allows you to send HTTP request and view the response in Visual Studio Code directly.
-
 ## :postbox: Faq
+
+**Question:** What patterns of tree entities are used in this project?
+
+**Answer:** For now, this project use just the closure-table, that are the best way to read and write tree relations. In future, it'll contain more use examples of another patterns.
 
 **Question:** What are the technologies used in this project?
 
 **Answer:** The technologies used in this project are [NodeJS](https://nodejs.org/en/) + [Express Framework](http://expressjs.com/en/) to handle the server and [TypeORM](https://typeorm.io/#/)
+
+### More...
+
+To get more info, please see [this section of typeorm documentation](https://typeorm.io/#/tree-entities) about tree entities.
