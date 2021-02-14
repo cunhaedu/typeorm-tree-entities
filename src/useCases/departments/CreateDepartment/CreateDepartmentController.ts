@@ -9,12 +9,12 @@ export class CreateDepartmentController {
   async handle(request: Request, response: Response): Promise<Response> {
     const {
       name,
-      parent,
+      departmentResponsible,
     } = request.body;
 
     const data = {
       name,
-      parent,
+      departmentResponsible,
     };
 
     try {

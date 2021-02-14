@@ -1,17 +1,16 @@
 import {
   Entity,
   Column,
-  CreateDateColumn,
-  UpdateDateColumn,
   PrimaryGeneratedColumn,
   TreeParent,
   TreeChildren,
   Tree,
 } from 'typeorm';
+import DefaultEntity from './DefaultEntity';
 
 @Entity('departments')
 @Tree('closure-table')
-export default class Department {
+export default class Department extends DefaultEntity {
   @Column('uuid')
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -20,14 +19,8 @@ export default class Department {
   name: string;
 
   @TreeParent()
-  parent: Department;
+  departmentResponsible: Department;
 
   @TreeChildren()
-  children: Department[];
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date;
-
-  @UpdateDateColumn({ type: 'timestamp' })
-  updated_at: Date;
+  subDepartments: Department[];
 }

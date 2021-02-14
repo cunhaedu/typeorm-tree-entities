@@ -1,16 +1,15 @@
 import {
   Entity,
   Column,
-  CreateDateColumn,
-  UpdateDateColumn,
   PrimaryGeneratedColumn,
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
+import DefaultEntity from './DefaultEntity';
 import Department from './Department';
 
 @Entity('customers')
-export default class Customer {
+export default class Customer extends DefaultEntity {
   @Column('uuid')
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -24,10 +23,4 @@ export default class Customer {
   @ManyToOne(() => Department)
   @JoinColumn({ name: 'department_id' })
   department: Department;
-
-  @CreateDateColumn()
-  created_at: Date;
-
-  @UpdateDateColumn()
-  updated_at: Date;
 }

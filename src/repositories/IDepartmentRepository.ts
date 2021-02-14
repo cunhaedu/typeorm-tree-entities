@@ -1,7 +1,7 @@
 import Department from '../entities/Department';
 
 export interface IDepartmentRepository {
-  find(relations?: string[]): Promise<Department[]>
+  find(): Promise<Department[]>
   findById(id: string, relations?: string[]): Promise<Department>
   save(department: Department): Promise<Department>
   update(department: Department): Promise<Department>

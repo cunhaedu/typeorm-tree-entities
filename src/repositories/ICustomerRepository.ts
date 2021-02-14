@@ -1,7 +1,7 @@
-import Orphanage from '../entities/Orphanage';
+import Customer from '../entities/Customer';
 
-export interface IOrphanagesRepository {
-  find(relations?: string[]): Promise<Orphanage[]>
-  findById(id: number, relations?: string[]): Promise<Orphanage>
-  save(orphanage: Orphanage): Promise<void>
+export interface ICustomersRepository {
+  find(relations?: string[]): Promise<Customer[]>
+  findById(id: number, relations?: string[]): Promise<Customer>
+  save(customer: Customer): Promise<void>
 }
