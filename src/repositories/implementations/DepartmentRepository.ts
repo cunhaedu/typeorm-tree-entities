@@ -4,13 +4,6 @@ import { IDepartmentRepository } from '../IDepartmentRepository';
 
 export class DepartmentsRepository implements IDepartmentRepository {
   async save(department: Department): Promise<Department> {
-    if (department.departmentResponsible) {
-      const parent = await getRepository(Department).findOne(department.departmentResponsible.id);
-      if (!parent) throw new Error('Parent not find');
-      // eslint-disable-next-line no-param-reassign
-      department.departmentResponsible = parent;
-    }
-
     const departmentsRepository = getRepository(Department);
 
     const createDepartment = departmentsRepository.create(department);
