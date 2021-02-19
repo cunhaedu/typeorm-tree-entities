@@ -6,4 +6,5 @@ export interface IDepartmentRepository {
   save(department: Department): Promise<Department>
   update(department: Department): Promise<Department>
   delete(id: string): Promise<void>
+  restore(id: string): Promise<void>
 }

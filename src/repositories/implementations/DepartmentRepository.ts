@@ -44,4 +44,10 @@ export class DepartmentsRepository implements IDepartmentRepository {
 
     await departmentsRepository.softDelete(id);
   }
+
+  async restore(id: string): Promise<void> {
+    const departmentsRepository = getRepository(Department);
+
+    await departmentsRepository.restore(id);
+  }
 }
