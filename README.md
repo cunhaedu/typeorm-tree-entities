@@ -24,8 +24,8 @@ Learning how to work with tree entities in TypeORM
 
 In order to understand the entities, I've created the following database model:
 
-<p align="center">
-   <img src=".github/db_model.png" width="900"/>
+<p align="left">
+   <img src=".github/db_model.png" width="400"/>
 </p>
 
 # :construction_worker: Installation
