@@ -13,7 +13,7 @@ Learning how to work with tree entities in TypeORM
 * [Installation](#construction_worker-installation)
 * [Getting Started](#runner-getting-started)
 * [Build](#runner-build)
-* [Application Routes](#rocket-application-routes)
+* [Status Codes](#status-codes)
 * [FAQ](#postbox-faq)
 
 # :rocket: Features
@@ -34,7 +34,7 @@ In order to understand the entities, I've created the following database model:
 
 
 ```
-git clone git@github.com:cunhaedu/challenge.git
+git clone https://github.com/cunhaedu/typeorm-tree-entities.git
 ```
 
 **Install dependencies**
